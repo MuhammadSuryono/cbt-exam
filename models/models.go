@@ -45,3 +45,9 @@ type QueryRequest struct {
 	Page int `form:"page"`
 	Size int `form:"size"`
 }
+
+type ParameterPushAnswer struct {
+	RegisterNUmber string `json:"register_number"`
+	Id             int64  `json:"id"`
+	Value          int    `json:"value"`
+}

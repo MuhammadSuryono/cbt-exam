@@ -15,7 +15,7 @@ func main() {
 	controller := controllers.NewExam()
 	api := server.Group("api/v1/exam")
 	{
-		api.GET("/push", controller.ExamPush)
+		api.POST("/push", controller.ExamPush)
 	}
 
 	server.Run(":8081")

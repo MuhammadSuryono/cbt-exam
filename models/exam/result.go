@@ -56,3 +56,17 @@ func convAnswer(param int) string {
 func CountTotalScore(totalCount int, totalType int) int {
 	return int(math.Ceil(float64((totalCount / totalType) * 10)))
 }
+
+func PushAnswer(registerNumber string, questionId int64, value int) {
+	var result ExamResult
+	db.Connection.Table(result.TableName()).Where("number_register = ? AND exam_question_id = ?", registerNumber, questionId).First(&result)
+	if result.ID != 0 {
+		result.Value = value
+		db.Connection.Save(&result)
+	} else {
+		result.NumberRegister = registerNumber
+		result.ExamQuestionID = questionId
+		result.Value = value
+		db.Connection.Create(&result)
+	}
+}
