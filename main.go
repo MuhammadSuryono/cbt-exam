@@ -16,6 +16,7 @@ func main() {
 	api := server.Group("api/v1/exam")
 	{
 		api.POST("/push", controller.ExamPush)
+		api.GET("/result/:session_key/download", controller.ExportToExcel)
 	}
 
 	server.Run(":8081")
