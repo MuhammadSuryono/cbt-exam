@@ -10,6 +10,6 @@ func TestUser(t *testing.T) {
 	_ = godotenv.Load()
 	db.InitConnectionFromEnvironment().CreateNewConnection()
 
-	data := GetAllDataWithoutPagination()
-	ExportToFile(data)
+	data := GetAllDataWithoutPagination("s4fu2")
+	ExportToFile(data, "file-sabtu-x.xlsx")
 }

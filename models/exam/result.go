@@ -54,7 +54,7 @@ func convAnswer(param int) string {
 }
 
 func CountTotalScore(totalCount int, totalType int) int {
-	return int(math.Ceil(float64((totalCount / totalType) * 10)))
+	return int(math.Round(float64(totalCount) / float64(totalType) * 10))
 }
 
 func PushAnswer(registerNumber string, questionId int64, value int) {

@@ -21,11 +21,11 @@ var headers = []string{
 	"Total Score",
 }
 
-func ExportToFile(data []UserParticipantResponseWithTypeExam) {
+func ExportToFile(data []UserParticipantResponseWithTypeExam, filename string) {
 	xlsx := excelize.NewFile()
 	setHeader(xlsx)
 	setDataBody(xlsx, data)
-	err := xlsx.SaveAs("file_senin.xlsx")
+	err := xlsx.SaveAs(filename)
 	if err != nil {
 		fmt.Println(err)
 	}

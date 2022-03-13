@@ -106,7 +106,7 @@ func getResultExam(user UserParticipantResponse) UserParticipantResponse {
 		scoreCovert := exam.DictRewardExam[dataType.ID][totalCorrect]
 		totalCount += scoreCovert
 	}
-	user.TotalScore = exam.CountTotalScore(totalCount, totalType)
+	user.TotalScore = int(exam.CountTotalScore(totalCount, totalType))
 	return user
 }
 
@@ -146,12 +146,13 @@ func getResultExamWithTypeExam(user UserParticipantResponse) (users UserParticip
 	return
 }
 
-func GetAllDataWithoutPagination() []UserParticipantResponseWithTypeExam {
+func GetAllDataWithoutPagination(sessionKey string) []UserParticipantResponseWithTypeExam {
 	var participants []UserParticipantResponse
 	_ = db.Connection.Table("user_peserta").
 		Select("user_peserta.*, session_access.session_name").
+		Joins("left join log_session_user ON user_peserta.number_of_register = log_session_user.register_number").
 		Joins("join session_access ON user_peserta.session_id = session_access.id").
-		Where("date_register BETWEEN ? AND ?", "2022-03-07 00:01:09", "2022-03-07 23:59:09").
+		Where("log_session_user.session_key", sessionKey).
 		Find(&participants)
 
 	var results []UserParticipantResponseWithTypeExam
