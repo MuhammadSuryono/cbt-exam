@@ -4,6 +4,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
 github.com/MuhammadSuryono/go-helper v0.0.1 h1:IQP+1kx+c9bWRbL2OjNNxSyz8PlauEXnPuQ1rjOeh4E=
 github.com/MuhammadSuryono/go-helper v0.0.1/go.mod h1:qb4nbPXgW/Ngy7WadkW2uRdTyBpJSIttv2aqHpmBEhg=
+github.com/SebastiaanKlippert/go-wkhtmltopdf v1.7.2 h1:LORAatv6KuKheYq8HXehiwx3f/VGuzJBNSydUDQ98EM=
+github.com/SebastiaanKlippert/go-wkhtmltopdf v1.7.2/go.mod h1:TY8r0gmwEL1c5Lbd66NgQCkL4ZjGDJCMVqvbbFvUx20=
 github.com/Shelnutt2/db2struct v1.0.2 h1:QVCuUglySasRIZ2ANrTOIAnvEqbbBY5mVn4/QjVBnOY=
 github.com/Shelnutt2/db2struct v1.0.2/go.mod h1:MNUMe6GxylqpbA7M9s1nVtlTmJAfaIeo94uEeaIWXHk=
 github.com/cockroachdb/apd v1.1.0/go.mod h1:8Sl8LxpKi29FqWXR16WEFZRNSz3SoPzUzeMeY4+DwBQ=

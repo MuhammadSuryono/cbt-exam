@@ -10,6 +10,7 @@ require (
 
 require (
 	github.com/MuhammadSuryono/go-helper v0.0.1 // indirect
+	github.com/SebastiaanKlippert/go-wkhtmltopdf v1.7.2 // indirect
 	github.com/Shelnutt2/db2struct v1.0.2 // indirect
 	github.com/denisenkom/go-mssqldb v0.11.0 // indirect
 	github.com/droundy/goopt v0.0.0-20170604162106-0b8effe182da // indirect
