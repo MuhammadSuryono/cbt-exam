@@ -26,7 +26,6 @@ func (l *ListQuestion) TableName() string {
 func GetListQuestionCategory(categoryId int64) (listQuestion []ListQuestion) {
 	_ = db.Connection.Table("list_question").
 		Where("question_category_id = ?", categoryId).
-		Where("is_publish = ?", true).
 		Find(&listQuestion)
 	return
 }
