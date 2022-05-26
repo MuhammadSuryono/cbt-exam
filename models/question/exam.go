@@ -5,9 +5,11 @@ import (
 	"gtihub.com/MuhammadSuryono/cbt-uploader/file/excel"
 	"gtihub.com/MuhammadSuryono/cbt-uploader/models"
 	"gtihub.com/MuhammadSuryono/cbt-uploader/models/exam"
+	"strconv"
 )
 
 func AddExamQuestion(dataExcel excel.TemplateQuestion, groupId int64, listQuestionId int64) {
+	i, _ := strconv.Atoi(dataExcel.Answer)
 	dataExam := models.ExamQuestion{
 		GroupQuestionId: groupId,
 		ListQuestionId:  listQuestionId,
@@ -17,7 +19,7 @@ func AddExamQuestion(dataExcel excel.TemplateQuestion, groupId int64, listQuesti
 		Option3:         dataExcel.Option3,
 		Option4:         dataExcel.Option4,
 		Option5:         dataExcel.Option5,
-		Answer:          dataExcel.Answer,
+		Answer:          i,
 	}
 
 	_ = db.Connection.Table("exam_question").Create(&dataExam)
