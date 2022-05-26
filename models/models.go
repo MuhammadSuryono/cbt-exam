@@ -30,7 +30,7 @@ type ExamQuestion struct {
 	Option3         string    `json:"option_3" gorm:"column:option_3"`
 	Option4         string    `json:"option_4" gorm:"column:option_4"`
 	Option5         string    `json:"option_5" gorm:"column:option_5"`
-	Answer          string    `json:"answer"`
+	Answer          int       `json:"answer"`
 	CreatedAt       time.Time `json:"created_at"`
 	UpdatedAt       time.Time `json:"updated_at"`
 }
@@ -51,4 +51,8 @@ type ParameterPushAnswer struct {
 	RegisterNUmber string `json:"register_number"`
 	Id             int64  `json:"id"`
 	Value          int    `json:"value"`
+}
+
+type CountResultExam struct {
+	RegisterNUmber string `json:"register_number"`
 }
