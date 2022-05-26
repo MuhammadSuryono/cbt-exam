@@ -5,12 +5,15 @@ import (
 	"github.com/joho/godotenv"
 	"gtihub.com/MuhammadSuryono/cbt-uploader/controllers"
 	"gtihub.com/MuhammadSuryono/cbt-uploader/models/exam"
+	"gtihub.com/MuhammadSuryono/cbt-uploader/models/user"
 )
 
 func main() {
 	_ = godotenv.Load()
 	db.InitConnectionFromEnvironment().CreateNewConnection()
 	_ = db.Connection.AutoMigrate(&exam.ExamResult{})
+	_ = db.Connection.AutoMigrate(&user.UserParticipantWithTypeExam{})
+	_ = db.Connection.AutoMigrate(&user.TypeExamResult{})
 
 	server := controllers.RunServer()
 
